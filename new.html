@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vasukhush</title>
+    <link rel="stylesheet" href="new.css" />
+  </head>
+  <body>
+    </div>
+            <div class="right">
+                <p>Click To Play</p>
+                <img src="play.png" id="icon">
+            </div>
+        </div>
+    </div>
+
+    <audio id="mysong">
+        <source src="chocolate.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+
+        var mysong = document.getElementById("mysong");
+        var icon = document.getElementById("icon");
+        
+        icon.onclick = function(){
+            if(mysong.paused){
+                mysong.play();
+                icon.src = "pause.png";
+            }else{
+                mysong.pause();
+                icon.src = "play.png";
+            }
+        }
+
+    </script>
+    
+
+    <button class="chocolate-button">
+      <div class="crumbs"></div>
+      <span class="bar">
+        <span class="text"> Chocolate Bar</span>
+      </span>
+    </button>    
+    <div class="instructions">Click on This Chocolate PRINCESS👸</div>
+
+    <script>
+      console.clear();
+
+      const elButton = document.querySelector(".chocolate-button");
+
+      elButton.addEventListener("mousedown", (event) => {
+        if (!elButton.matches(":focus")) {
+          elButton.style.setProperty("--x", event.offsetX);
+          elButton.style.setProperty("--y", event.offsetY);
+        }
+      });
+
+    </script>
+  </body>
+</html>
